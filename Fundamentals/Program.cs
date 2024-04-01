@@ -53,3 +53,20 @@ foreach (KeyValuePair<string,int> entry in PetAges)
     Console.WriteLine($"{entry.Key} is {entry.Value} years old");
     
 }
+
+
+static void SayHello()
+{
+    Console.WriteLine("Hello how are you doing today?");
+}
+
+SayHello();
+
+static int MathingTheMath(int numOne, int numTwo=200)
+{
+    return numOne * numTwo;
+}
+
+
+int Result = MathingTheMath(1);
+Console.WriteLine(Result);
