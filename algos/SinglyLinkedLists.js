@@ -86,7 +86,7 @@ class SinglyLinkedList {
      */
     insertAtBackMany(vals) {
         for (const item of vals) {
-                this.insertAtBack(item);
+            this.insertAtBack(item);
         }
         return this;
     }
