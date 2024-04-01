@@ -48,7 +48,7 @@ class SinglyLinkedList {
      * @returns {boolean}
      */
     isEmpty() {
-        //your code here
+        return this.head === null;
     }
 
     /**
@@ -117,13 +117,13 @@ after completing it, uncomment the code.
 */
 const emptyList = new SinglyLinkedList();
 
-const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
-const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
-const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
-const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
-const unorderedList = new SinglyLinkedList().insertAtBackMany([
--5, -10, 4, -3, 6, 1, -7, -2,
-]);
+// const singleNodeList = new SinglyLinkedList().insertAtBackMany([1]);
+// const biNodeList = new SinglyLinkedList().insertAtBackMany([1, 2]);
+// const firstThreeList = new SinglyLinkedList().insertAtBackMany([1, 2, 3]);
+// const secondThreeList = new SinglyLinkedList().insertAtBackMany([4, 5, 6]);
+// const unorderedList = new SinglyLinkedList().insertAtBackMany([
+// -5, -10, 4, -3, 6, 1, -7, -2,
+// ]);
 
   /* node 4 connects to node 1, back to head */
   // const perfectLoopList = new SinglyLinkedList().insertAtBackMany([1, 2, 3, 4]);
