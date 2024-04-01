@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Security.Cryptography;
+
 Console.WriteLine("Hello, World!");
 
 int Age = 35;
@@ -70,3 +72,4 @@ static int MathingTheMath(int numOne, int numTwo=200)
 
 int Result = MathingTheMath(1);
 Console.WriteLine(Result);
+
