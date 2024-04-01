@@ -64,13 +64,14 @@ class SinglyLinkedList {
         let newEnd = new ListNode(data);
         if (this.isEmpty()){
             this.head = newEnd;
-            return;
+            return this;
         }
         let runner = this.head;
         while (runner.next !== null){
             runner = runner.next
         }
         runner.next = newEnd;
+        return this;
     }
 
     /**
@@ -86,11 +87,11 @@ class SinglyLinkedList {
     insertAtBackRecursive(data, runner = this.head) {
         if (this.head === null){
             this.head = new ListNode(data);
-            return
+            return this
         }
         if ( runner.next === null){
             runner.next = new ListNode(data)
-            return
+            return this
         }
         return this.insertAtBackRecursive(data, runner.next);
     }
