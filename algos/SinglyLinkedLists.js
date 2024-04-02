@@ -136,10 +136,23 @@ class SinglyLinkedList {
      * @param {any} data The data for the new node.
      * @returns {SinglyLinkedList} This list.
      */
-    insertAtFront(data) { 
-        //your code here
-    }
+    insertAtFront(data) {
 
+        // check if anything is in the list
+        // declare variable for the new node that will be inserted in the front
+        // check value of the head at index zero
+        // set the .Next of the new ListNode to equal the head of the first node in the list
+
+        let newHead = new ListNode(data);
+        if (this.isEmpty()) {
+            this.head = newHead;
+            return this;
+        }
+        newHead.next = this.head
+        this.head = newHead
+        return this;
+    }
+    
     /**
      * Removes the first node of this list.
      * - Time: (?).
@@ -177,7 +190,8 @@ testList.insertAtBackMany([10,8,12,5,15])
 // console.log(testList.toArr());
 
 // // remove head test
-// testList.removeHead();
+// let removedData = testList.removeHead();
+// console.log(removedData)
 // console.log(testList.toArr());
 
 // // average test
