@@ -37,7 +37,7 @@ class SinglyLinkedList {
      *    returned without having to explicitly write "return".
      */
     constructor() {
-      /** @type {ListNode|null} */
+        /** @type {ListNode|null} */
         this.head = null;
     }
 
@@ -62,13 +62,13 @@ class SinglyLinkedList {
     insertAtBack(data) {
         //your code here
         let newEnd = new ListNode(data);
-        if (this.isEmpty()){
+        if (this.isEmpty()) {
             this.head = newEnd;
             return this;
         }
         let runner = this.head;
-        while (runner.next !== null){
-            runner = runner.next
+        while (runner.next !== null) {
+            runner = runner.next;
         }
         runner.next = newEnd;
         return this;
@@ -85,13 +85,13 @@ class SinglyLinkedList {
      * @returns {SinglyLinkedList} This list.
      */
     insertAtBackRecursive(data, runner = this.head) {
-        if (this.head === null){
+        if (this.head === null) {
             this.head = new ListNode(data);
-            return this
+            return this;
         }
-        if ( runner.next === null){
-            runner.next = new ListNode(data)
-            return this
+        if (runner.next === null) {
+            runner.next = new ListNode(data);
+            return this;
         }
         return this.insertAtBackRecursive(data, runner.next);
     }
@@ -124,7 +124,7 @@ class SinglyLinkedList {
             arr.push(runner.data);
             runner = runner.next;
         }
-        
+
         return arr;
     }
 
@@ -148,11 +148,11 @@ class SinglyLinkedList {
             this.head = newHead;
             return this;
         }
-        newHead.next = this.head
-        this.head = newHead
+        newHead.next = this.head;
+        this.head = newHead;
         return this;
     }
-    
+
     /**
      * Removes the first node of this list.
      * - Time: (?).
@@ -174,7 +174,7 @@ class SinglyLinkedList {
      * - Space: (?).
      * @returns {number|null} The average of the node's data or null if empty.
      */
-    average() { 
+    average() {
         //your code here
         if (this.isEmpty()) return null;
         let runner = this.head;
@@ -187,6 +187,40 @@ class SinglyLinkedList {
         }
         return sum / count;
     }
+
+    /**
+    * Removes the last node of this list.
+    * - Time: O(?).
+    * - Space: O(?).
+    * @returns {any} The data from the node that was removed or null if no nodes were removed.
+    */
+    removeBack() {
+        //Your code here
+    }
+
+    /**
+    * Determines whether or not the given search value exists in this list iteratively.
+    * - Time: O(?).
+    * - Space: O(?).
+    * @param {any} val The data to search for in the nodes of this list.
+    * @returns {boolean}
+    */
+    contains(val) {
+        //your code here
+    }
+
+    /**
+    * Determines whether or not the given search value exists in this list recursively.
+    * - Time: O(?).
+    * - Space: O(?).
+    * @param {any} val The data to search for in the nodes of this list.
+    * @param {?ListNode} current The current node during the traversal of this list
+    *    or null when the end of the list has been reached.
+    * @returns {boolean}
+    */
+    containsRecursive(val, current = this.head) {
+        //Your code here
+    }
 }
 
 /******************************************************************* 
@@ -197,7 +231,7 @@ after completing it, uncomment the code.
 const emptyList = new SinglyLinkedList();
 
 let testList = new SinglyLinkedList();
-testList.insertAtBackMany([10,8,12,5,15])
+testList.insertAtBackMany([10, 8, 12, 5, 15]);
 
 // // insert at front test
 // testList.insertAtFront(999);
