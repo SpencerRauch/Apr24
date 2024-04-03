@@ -188,7 +188,7 @@ class SinglyLinkedList {
         return sum / count;
     }
 
-    
+
     /**
      * Determines whether or not the given search value exists in this list iteratively.
      * - Time: O(?).
@@ -196,10 +196,10 @@ class SinglyLinkedList {
      * @param {any} val The data to search for in the nodes of this list.
      * @returns {boolean}
     */
-   contains(val) {
-       //your code here
+    contains(val) {
+        //your code here
     }
-    
+
     /**
      * Determines whether or not the given search value exists in this list recursively.
      * - Time: O(?).
@@ -209,10 +209,10 @@ class SinglyLinkedList {
      *    or null when the end of the list has been reached.
      * @returns {boolean}
     */
-   containsRecursive(val, current = this.head) {
-       //Your code here
+    containsRecursive(val, current = this.head) {
+        //Your code here
     }
-    
+
     /**
     * Removes the last node of this list.
     * - Time: O(?).
