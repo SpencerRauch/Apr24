@@ -188,6 +188,31 @@ class SinglyLinkedList {
         return sum / count;
     }
 
+    
+    /**
+     * Determines whether or not the given search value exists in this list iteratively.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The data to search for in the nodes of this list.
+     * @returns {boolean}
+    */
+   contains(val) {
+       //your code here
+    }
+    
+    /**
+     * Determines whether or not the given search value exists in this list recursively.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} val The data to search for in the nodes of this list.
+     * @param {?ListNode} current The current node during the traversal of this list
+     *    or null when the end of the list has been reached.
+     * @returns {boolean}
+    */
+   containsRecursive(val, current = this.head) {
+       //Your code here
+    }
+    
     /**
     * Removes the last node of this list.
     * - Time: O(?).
@@ -197,37 +222,13 @@ class SinglyLinkedList {
     removeBack() {
         //Your code here
     }
-
-    /**
-    * Determines whether or not the given search value exists in this list iteratively.
-    * - Time: O(?).
-    * - Space: O(?).
-    * @param {any} val The data to search for in the nodes of this list.
-    * @returns {boolean}
-    */
-    contains(val) {
-        //your code here
-    }
-
-    /**
-    * Determines whether or not the given search value exists in this list recursively.
-    * - Time: O(?).
-    * - Space: O(?).
-    * @param {any} val The data to search for in the nodes of this list.
-    * @param {?ListNode} current The current node during the traversal of this list
-    *    or null when the end of the list has been reached.
-    * @returns {boolean}
-    */
-    containsRecursive(val, current = this.head) {
-        //Your code here
-    }
 }
 
 /******************************************************************* 
-Multiple test lists already constructed to test your methods on.
-Below commented code depends on insertAtBack method to be completed,
-after completing it, uncomment the code.
-*/
+ Multiple test lists already constructed to test your methods on.
+ Below commented code depends on insertAtBack method to be completed,
+ after completing it, uncomment the code.
+ */
 const emptyList = new SinglyLinkedList();
 
 let testList = new SinglyLinkedList();
