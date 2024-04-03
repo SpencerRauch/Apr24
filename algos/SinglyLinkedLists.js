@@ -161,6 +161,10 @@ class SinglyLinkedList {
      */
     removeHead() {
         //Your code here
+        if (this.isEmpty()) return null;
+        let removed = this.head;
+        this.head = this.head.next;
+        return removed.data;
     }
 
     // EXTRA
@@ -172,6 +176,16 @@ class SinglyLinkedList {
      */
     average() { 
         //your code here
+        if (this.isEmpty()) return null;
+        let runner = this.head;
+        let count = 0;
+        let sum = 0;
+        while (runner) {
+            count++;
+            sum += runner.data;
+            runner = runner.next;
+        }
+        return sum / count;
     }
 }
 
