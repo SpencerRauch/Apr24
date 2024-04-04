@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PetParty.Models;
 
 namespace PetParty.Controllers;
@@ -16,8 +17,16 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
-    {
-        return View();
+    {   
+        List<SelectListItem> Options = new()
+        {
+            new SelectListItem("--- please choose ---","",true,true),
+            new SelectListItem("Bear","Bear"),
+            new SelectListItem("Bobcat","Bobcat"),
+            new SelectListItem("Deer","Deer")
+        };
+        ViewBag.Options = Options;
+        return View("Index");
     }
 
     [HttpPost("process")]
@@ -33,7 +42,8 @@ public class HomeController : Controller
         // Console.WriteLine($"{newPet.Name} is a {newPet.Age} year(s) old {newPet.Species} they {(newPet.Urbanized ? "are":"aren't")} urbanized");
         if(!ModelState.IsValid)
         {
-            return View("Index");
+            
+            return Index();
         }
         FakePetDb.Add(newPet);
         // FakePetDb.SaveChanges() <-- this is the only difference when we actually save to our db!
