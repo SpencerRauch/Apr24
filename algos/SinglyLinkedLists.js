@@ -298,6 +298,29 @@ class SinglyLinkedList {
         }
         return false;
     }
+
+    /**
+    * Concatenates the nodes of a given list onto the back of this list.
+    * - Time: O(?).
+    * - Space: O(?).
+    * @param {SinglyLinkedList} addList An instance of a different list whose
+    *    whose nodes will be added to the back of this list.
+    * @returns {SinglyLinkedList} This list with the added nodes.
+    */
+    concat(addList) { 
+        // your code here
+    }
+
+    /**
+    * Finds the node with the smallest data and moves that node to the front of
+    * this list.
+    * - Time: O(?).
+    * - Space: O(?).
+    * @returns {SinglyLinkedList} This list.
+    */
+    moveMinToFront() {
+        //your code here
+    }
 }
 
 /******************************************************************* 
