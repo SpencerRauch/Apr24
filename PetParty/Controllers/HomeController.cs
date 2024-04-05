@@ -46,13 +46,19 @@ public class HomeController : Controller
             return Index();
         }
         FakePetDb.Add(newPet);
+        HttpContext.Session.SetString("LastPet",newPet.Name);
         // FakePetDb.SaveChanges() <-- this is the only difference when we actually save to our db!
         return RedirectToAction("AllPets");
     }
 
     [HttpGet("pets")]
-    public ViewResult AllPets()
+    public IActionResult AllPets()
     {
+        string? LastPet = HttpContext.Session.GetString("LastPet");
+        if (LastPet == null)
+        {
+            return RedirectToAction("Index");
+        }
         return View(FakePetDb);
     }
 
@@ -61,6 +67,21 @@ public class HomeController : Controller
     {
         List<string> PassedValue = ["Bob","Alice"];
         return View("VMFun",PassedValue);
+    }
+
+    [HttpPost("pets/filter")]
+    public RedirectToActionResult SetFilter(int limit)
+    {
+        HttpContext.Session.SetInt32("Limit", limit);
+        return RedirectToAction("AllPets");
+    }
+
+    [HttpPost("pets/filter/clear")]
+    public RedirectToActionResult ClearFilter()
+    {
+        // HttpContext.Session.Clear();
+        HttpContext.Session.Remove("Limit");
+        return RedirectToAction("AllPets");
     }
 
     public IActionResult Privacy()
