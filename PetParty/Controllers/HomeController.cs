@@ -84,6 +84,13 @@ public class HomeController : Controller
         return RedirectToAction("AllPets");
     }
 
+
+    public string Example()
+    {
+        return "What is the path for this?";
+    }
+
+    [HttpGet("test")]
     public IActionResult Privacy()
     {
         return View();
