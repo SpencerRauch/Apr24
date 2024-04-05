@@ -308,7 +308,7 @@ class SinglyLinkedList {
     * @returns {SinglyLinkedList} This list with the added nodes.
     */
     concat(addList) { 
-        // your code here
+        //your code here
     }
 
     /**
@@ -330,14 +330,14 @@ class SinglyLinkedList {
  */
 const emptyList = new SinglyLinkedList();
 
-let testList = new SinglyLinkedList();
+const testList = new SinglyLinkedList();
 testList.insertAtBackMany([10, 8, 12, 5, 15]);
 
-//second to last test:
-// console.log(testList.secondToLast()) //should be 5
+const testList2 = new SinglyLinkedList().insertAtBackMany([4,5,6]);
 
-//remove val test:
-// testList.removeVal(8);
-// testList.removeVal(15);
-// testList.removeVal(10);
-// console.log(testList.toArr()) // should be [12,15]
+testList.concat(testList2);
+console.log(testList.toArr()) // [10,8,12,5,15,4,5,6]
+
+testList.moveMinToFront()
+console.log(testList.toArr()) // [4,10,8,12,5,15,5,6]
+
