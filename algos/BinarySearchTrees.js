@@ -59,6 +59,11 @@ class BinarySearchTree {
      */
     min(current = this.root) {
         //Your code here
+        if (this.isEmpty()) return null;
+        while(current.left){
+            current = current.left
+        }
+        return current.data
     }
 
     /**
@@ -71,6 +76,9 @@ class BinarySearchTree {
      */
     minRecursive(current = this.root) { 
         //Your code here
+        if (this.isEmpty()) return null;
+        if (current.left == null) return current.data
+        return this.minRecursive(current.left)
     }
 
     /**
@@ -82,7 +90,11 @@ class BinarySearchTree {
      * @returns {number} The largest integer from this tree.
      */
     max(current = this.root) { 
-        //Your code here
+        if (this.isEmpty()) return null;
+        while(current.right){
+            current = current.right
+        }
+        return current.data
     }
 
     /**
@@ -94,7 +106,9 @@ class BinarySearchTree {
      * @returns {number} The largest integer from this tree.
      */
     maxRecursive(current = this.root) { 
-        //Your code here
+        if (this.isEmpty()) return null;
+        if (current.right === null) return current.data
+        return this.maxRecursive(current.right)
     }
 
     // Logs this tree horizontally with the root on the left.
@@ -147,10 +161,10 @@ threeLevelTree.root.left.left = new BSTNode(2);
 threeLevelTree.root.left.right = new BSTNode(6);
 threeLevelTree.root.right = new BSTNode(15);
 threeLevelTree.root.right.left = new BSTNode(13);
-// threeLevelTree.print()
+threeLevelTree.print()
 
 //DAY ONE TESTS:
-// console.log(threeLevelTree.min()); //2
-// console.log(threeLevelTree.minRecursive()); //2
-// console.log(threeLevelTree.max()); //15
-// console.log(threeLevelTree.maxRecursive()); //15
+console.log(threeLevelTree.min()); //2
+console.log(threeLevelTree.minRecursive()); //2
+console.log(threeLevelTree.max()); //15
+console.log(threeLevelTree.maxRecursive()); //15
