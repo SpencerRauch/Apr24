@@ -21,6 +21,7 @@
     new VideoGame { Title = "Star Citizen", Studio ="Cloud Imperium Games", Rating = "M", Price = 45.99, Platform ="PC"},
     new VideoGame {Title = "Mario Kart 8", Studio = "Nintendo", Rating = "E", Price = 60.00, Platform = "Nintendo Switch, Wii U"},
     new VideoGame { Title = "Destiny 2", Studio ="Bungie", Rating = "T", Price = 0, Platform ="Varies"},
+    new VideoGame {Title = "NHL 24", Studio = "EA Vancouver", Rating = "E", Price = 24.99, Platform = "PS5, Xbox"}
 
 };
 
