@@ -148,3 +148,8 @@ threeLevelTree.root.right = new BSTNode(15);
 threeLevelTree.root.right.left = new BSTNode(13);
 // threeLevelTree.print()
 
+//DAY ONE TESTS:
+// console.log(threeLevelTree.min()); //2
+// console.log(threeLevelTree.minRecursive()); //2
+// console.log(threeLevelTree.max()); //15
+// console.log(threeLevelTree.maxRecursive()); //15
