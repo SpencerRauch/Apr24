@@ -27,14 +27,44 @@
 
 
 // Getting a single result based on criteria
+// VideoGame EldenRing = Games.First(g => g.Title == "Elden Rin");
+//first will throw an exception if we do not find an exact match!
+// VideoGame? EldenRing = Games.FirstOrDefault(g => g.Title.Contains("Elden"));
+// if(EldenRing == null)
+// {
+//     Console.WriteLine("Not found");
+    
+// }
+// else
+// {
+//     Console.WriteLine(EldenRing);
+    
+// }
+
+// Console.WriteLine(EldenRing);
+
 
 // Getting multiple results based on criteria
+// IEnumerable<VideoGame> Affordable = Games.Where(g => g.Price < 30.00);
+List<VideoGame> Affordable = Games.Where(g=>g.Price <30 && g.Price > 0).ToList();
+
+// Affordable.ForEach(Console.WriteLine);
+
 
 // Getting select pieces of data
+List<string> AffordableTitles = Games.Where(g=>g.Price <30).Select(g => g.Title).ToList();
+// AffordableTitles.ForEach(Console.WriteLine);
 
 // Ordering / Top 3
+List<VideoGame> MostExpensive = Games.OrderByDescending(g => g.Price).Take(3).ToList();
+// MostExpensive.ForEach(Console.WriteLine);
+
 
 // Logical testing
+bool FreeGames = Games.Any(g => g.Price == 0);
+bool FreeGamesConvoluted = !Games.All(g => g.Price != 0);
+// Console.WriteLine($"Are there free games? {FreeGames} {FreeGamesConvoluted}");
+
 
 Flavor Vanilla = new("Vanilla", false);
 Flavor Chocolate = new("Chocolate", false);
@@ -56,9 +86,11 @@ IceCreamStore Alexs = new("Alex Miller Goes Nuts",new(){RockyRoad,Spumoni,Peanut
 List<IceCreamStore> StoreDirectory = new(){Alices,Fionas,Carls,Bobs,Alexs};
 
 // nested queries 
+List<IceCreamStore> NutFreeStores = StoreDirectory.Where(store => store.AvailableFlavors.All(f => !f.ContainsNuts)).ToList();
+// NutFreeStores.ForEach(Console.WriteLine);
 
-
-
+List<IceCreamStore> SellsCookieDough = StoreDirectory.Where(store => store.AvailableFlavors.Any(f => f.Name == "Cookie Dough")).ToList();
+SellsCookieDough.ForEach(Console.WriteLine);
 
 
 
