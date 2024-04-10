@@ -266,6 +266,8 @@ threeLevelTree.insert(6);
 threeLevelTree.insert(13);
 threeLevelTree.print();
 
+console.log("**********************");
+
 const threeLevelTree2 = new BinarySearchTree();
 threeLevelTree2.insertRecursive(10);
 threeLevelTree2.insertRecursive(5);
