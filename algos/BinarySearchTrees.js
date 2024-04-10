@@ -186,7 +186,34 @@ class BinarySearchTree {
      * @returns {BinarySearchTree} This tree.
      */
     insert(newVal) {
-        //your code here
+        const node = new BSTNode(newVal);
+
+        //if empty, make the new root
+        if (this.isEmpty()) {
+            this.root = node;
+            return this;
+        }
+
+        let current = this.root;
+
+        while (true) {
+            if (newVal <= current.data) { // if less or equal, go left
+                if (current.left === null) { // if there is no left, insert here
+                    current.left = node;
+                    return this;
+                }
+
+                current = current.left;
+            } else {
+                // newVal is greater than current.data
+                if (current.right === null) { // if there is no right, insert here
+                    current.right = node;
+                    return this;
+                }
+
+                current = current.right;
+            }
+        }
     }
 
     /**
@@ -199,8 +226,25 @@ class BinarySearchTree {
      *    the tree is being traversed.
      * @returns {BinarySearchTree} This tree.
      */
-    insertRecursive(newVal, curr = this.root) { 
-        //your code here
+    insertRecursive(newVal, curr = this.root) {
+        if (this.isEmpty()) {
+            this.root = new BSTNode(newVal);
+            return this;
+        }
+
+        if (newVal > curr.data) {
+            if (curr.right === null) {
+                curr.right = new BSTNode(newVal);
+                return this;
+            }
+            return this.insertRecursive(newVal, curr.right);
+        }
+
+        if (curr.left === null) {
+            curr.left = new BSTNode(newVal);
+            return this;
+        }
+        return this.insertRecursive(newVal, curr.left);
     }
 }
 
@@ -214,19 +258,19 @@ class BinarySearchTree {
 2   6  13  
 */
 const threeLevelTree = new BinarySearchTree();
-threeLevelTree.insert(10)
-threeLevelTree.insert(5)
-threeLevelTree.insert(15)
-threeLevelTree.insert(2)
-threeLevelTree.insert(6)
-threeLevelTree.insert(13)
-threeLevelTree.print()
+threeLevelTree.insert(10);
+threeLevelTree.insert(5);
+threeLevelTree.insert(15);
+threeLevelTree.insert(2);
+threeLevelTree.insert(6);
+threeLevelTree.insert(13);
+threeLevelTree.print();
 
 const threeLevelTree2 = new BinarySearchTree();
-threeLevelTree2.insertRecursive(10)
-threeLevelTree2.insertRecursive(5)
-threeLevelTree2.insertRecursive(15)
-threeLevelTree2.insertRecursive(2)
-threeLevelTree2.insertRecursive(6)
-threeLevelTree2.insertRecursive(13)
-threeLevelTree2.print()
+threeLevelTree2.insertRecursive(10);
+threeLevelTree2.insertRecursive(5);
+threeLevelTree2.insertRecursive(15);
+threeLevelTree2.insertRecursive(2);
+threeLevelTree2.insertRecursive(6);
+threeLevelTree2.insertRecursive(13);
+threeLevelTree2.print();
