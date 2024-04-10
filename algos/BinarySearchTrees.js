@@ -197,21 +197,21 @@ class BinarySearchTree {
         let current = this.root;
 
         while (true) {
-            if (newVal <= current.data) { // if less or equal, go left
-                if (current.left === null) { // if there is no left, insert here
-                    current.left = node;
-                    return this;
-                }
-
-                current = current.left;
-            } else {
-                // newVal is greater than current.data
+            if (newVal >= current.data) { // if greater or equal, go right
                 if (current.right === null) { // if there is no right, insert here
                     current.right = node;
                     return this;
                 }
 
                 current = current.right;
+            } else {
+                // newVal is less than current.data
+                if (current.left === null) { // if there is no left, insert here
+                    current.left = node;
+                    return this;
+                }
+
+                current = current.left;
             }
         }
     }
