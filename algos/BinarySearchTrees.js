@@ -319,7 +319,10 @@ class BinarySearchTree {
         //your code here
         const queue = [];
         const vals = [];
-        queue.push(current)
+        
+        if(current){
+            queue.push(current)
+        }
 
         while (queue.length > 0){
             current = queue.shift()
