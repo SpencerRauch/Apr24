@@ -319,23 +319,23 @@ class BinarySearchTree {
         //your code here
         const queue = [];
         const vals = [];
-        
+
         if(current){
-            queue.push(current)
+            queue.push(current);
         }
 
         while (queue.length > 0){
-            current = queue.shift()
-            vals.push(current.data)
+            current = queue.shift();
+            vals.push(current.data);
             if (current.left){
-                queue.push(current.left)
+                queue.push(current.left);
             }
             if (current.right){
-                queue.push(current.right)
+                queue.push(current.right);
             }
         }
 
-        return vals
+        return vals;
     }
 
 
