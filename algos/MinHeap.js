@@ -44,7 +44,7 @@ class MinHeap {
 
     /**
      * Inserts a new number into the heap and maintains the heaps order.
-     * 1. Push new num to back then.
+     * 1. Push new num to back of the heap array.
      * 2. Iteratively swap the new num with it's parent while it is smaller than
      *    it's parent.
      * - Time: O(log n) logarithmic due to shiftUp / iterative swapping.
