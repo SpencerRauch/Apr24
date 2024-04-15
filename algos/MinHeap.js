@@ -23,6 +23,9 @@ class MinHeap {
         return Math.floor(index / 2);
     }
 
+    // currentIdex
+    // parentOfCurrent = this.idxOfParent(currentIdx)
+
     idxOfLeftChild(index) {
         return index * 2;
     }
