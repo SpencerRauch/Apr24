@@ -40,9 +40,9 @@ class MinHeap {
      * - Space: O(1) constant.
      * @returns {?number} Null if empty.
      */
-    top() { 
+    top() {
         //your code here
-        return this.heap[1]
+        return this.heap[1];
     }
 
     /**
@@ -54,7 +54,7 @@ class MinHeap {
      * - Space: O(1) constant.
      * @param {number} num The num to add.
      */
-    insert(num) { 
+    insert(num) {
         //add item to heap
         this.heap.push(num);
 
@@ -95,17 +95,38 @@ class MinHeap {
 
         this.printHorizontalTree(parentIdx * 2, spaceCnt);
     }
+
+    /**
+     * Extracts the min num from the heap and then re-orders the heap to
+     * maintain order so the next min is ready to be extracted.
+     * 1. Save the first node to a temp var.
+     * 2. Pop last node off and set idx1 equal to the popped value.
+     * 3. Iteratively swap the old last node that is now at idx1 with it's
+     *    smallest child IF the smallest child is smaller than it.
+     * - Time: O(log n) logarithmic due to shiftDown.
+     * - Space: O(1) constant.
+     * @returns {?number} The min number or null if empty.
+    */
+    extract() { 
+        //your code here
+    }
 }
 
 
 let testHeap = new MinHeap();
 
 testHeap.insert(10);
-
-testHeap.printHorizontalTree();
-console.log("\n\n********\n\n")
 testHeap.insert(7);
-testHeap.printHorizontalTree();
-console.log("\n\n********\n\n")
 testHeap.insert(3);
+testHeap.insert(4);
+testHeap.insert(5);
+testHeap.printHorizontalTree()
+
+
+console.log("\n\n********\n\n");
+console.log("extracted: ", testHeap.extract())
+testHeap.printHorizontalTree();
+
+console.log("\n\n********\n\n");
+console.log("extracted: ",testHeap.extract())
 testHeap.printHorizontalTree();
