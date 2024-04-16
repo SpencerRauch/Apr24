@@ -115,7 +115,8 @@ class MinHeap {
         let min = this.heap[1]
         
         // pop last item off and overwrite the previous minimum
-        this.heap[1] = this.heap.pop()
+        let lastItem = this.heap.pop()
+        this.heap[1] = lastItem
         
         //initializing parent, left and right
         let parent = 1;
