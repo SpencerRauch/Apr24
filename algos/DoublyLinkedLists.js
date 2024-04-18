@@ -61,6 +61,17 @@ class DoublyLinkedList {
         // TODO Your code here
     }
 
+    // * EXTRA
+    /**
+     * Removes the middle node in this list.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @returns {any} The data of the removed node or null if no true middle
+     */
+    removeMiddleNode() {
+        // TODO your code here
+    }
+
     /**
      * Determines if this list is empty.
      * - Time: O(1) constant.
