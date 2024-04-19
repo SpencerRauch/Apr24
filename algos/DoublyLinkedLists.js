@@ -48,38 +48,37 @@ class DoublyLinkedList {
      */
     insertAtFront(data) {
         //? Node Template for node parts
-            //? Head - First of List
-            //? Tail - End of List
-            //? Prev
-            //? Next
-            //? Data
+        //? Head - First of List
+        //? Tail - End of List
+        //? Prev
+        //? Next
+        //? Data
 
         // Create a New Node Var
-            // New Node = data argument
-            // next & prev are null
-            let newNode = new DLLNode(data);
+        // New Node = data argument
+        // next & prev are null
+        let newNode = new DLLNode(data);
 
-            // If List is empty
-                // New Node is Head & Tail of List
-            if(this.head == null)
-            {
-                this.head = newNode;
-                this.tail = newNode;
-                return this;
-            }
-    
-            // if list is populated
-                // look at the Head of the list
-                // set this.head.prev to New Node
-                this.head.prev = newNode;
-    
-            // set next of New Node to Old Head Data
-            newNode.next = this.head;
-    
-            // set New Node to Head
+        // If List is empty
+        // New Node is Head & Tail of List
+        if (this.head == null) {
             this.head = newNode;
-    
+            this.tail = newNode;
             return this;
+        }
+
+        // if list is populated
+        // look at the Head of the list
+        // set this.head.prev to New Node
+        this.head.prev = newNode;
+
+        // set next of New Node to Old Head Data
+        newNode.next = this.head;
+
+        // set New Node to Head
+        this.head = newNode;
+
+        return this;
     }
 
     /**
@@ -177,4 +176,37 @@ class DoublyLinkedList {
         items.forEach((item) => this.insertAtBack(item));
         return this;
     }
+
+    /**
+     * Inserts a new node with the given newVal after the node that has the
+     * given targetVal as it's data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} targetVal The node data to find.
+     * @param {any} newVal Data for the new node.
+     * @returns {boolean} Indicates if the new node was added.
+    */
+    insertAfter(targetVal, newVal) { 
+        // TODO: Your code here
+    }
+
+    /**
+     * Inserts a new node with the given newVal before the node that has the
+     * given targetVal as it's data.
+     * - Time: O(?).
+     * - Space: O(?).
+     * @param {any} targetVal The node data to find.
+     * @param {any} newVal Data for the new node.
+     * @returns {boolean} Indicates if the new node was added.
+    */
+    insertBefore(targetVal, newVal) { 
+        // TODO: Your code here
+    }
 }
+
+const singleNodeList = new DoublyLinkedList().insertAtBack(1);
+const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
+const firstThreeList = new DoublyLinkedList().insertAtBackMany([1, 2, 3]);
+const secondThreeList = new DoublyLinkedList().insertAtBackMany([4, 5, 6]);
+const unorderedList = new DoublyLinkedList().insertAtBackMany([-5,-10,4,-3,6,1,-7,-2,]);
+
