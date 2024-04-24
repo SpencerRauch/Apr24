@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\stacks\\CSharp\\Apr24\\FirstBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FirstBlazor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FirstBlazor.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\stacks\\CSharp\\Apr24\\FirstBlazor\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\stacks\\CSharp\\Apr24\\FirstBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\stacks\\CSharp\\Apr24\\FirstBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\stacks\\CSharp\\Apr24\\FirstBlazor\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FirstBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FirstBlazor.props",
+      "PackagePath": "build\\FirstBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FirstBlazor.props",
+      "PackagePath": "buildMultiTargeting\\FirstBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FirstBlazor.props",
+      "PackagePath": "buildTransitive\\FirstBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

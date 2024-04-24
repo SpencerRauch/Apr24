@@ -1,0 +1,45 @@
+@page "/games"
+@inject IGameService GameService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+@attribute [StreamRendering]
+
+<PageTitle>List of Games</PageTitle>
+<h3>Game List</h3>
+
+@if (games == null)
+{
+    <p>Loading....</p>
+}
+else if (games.Count == 0)
+{
+    <p>No games found</p>
+}
+else
+{
+    <ul>
+        @foreach (Game g in games)
+        {
+            <li>@g.Name</li>
+        }
+    </ul>
+}
+
+<button @onclick="NewGamePage" class="btn btn-primary">NewGame</button>
+
+
+@code{
+    List<Game>? games = null;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        games = await GameService.GetAllGames();
+    }
+
+    void NewGamePage()
+    {
+        // do something
+        NavigationManager.NavigateTo("/games/new");
+    }
+
+}
