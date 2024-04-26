@@ -37,6 +37,7 @@ class DoublyLinkedList {
         this.head = null;
         /** @type {DLLNode|null} */
         this.tail = null;
+        this.size = 0;
     }
 
     /**
@@ -77,6 +78,7 @@ class DoublyLinkedList {
 
         // set New Node to Head
         this.head = newNode;
+        this.size++;
 
         return this;
     }
@@ -98,6 +100,7 @@ class DoublyLinkedList {
             newTail.prev = this.tail;
             this.tail = newTail;
         }
+        this.size++;
         return this;
     }
 
@@ -117,6 +120,7 @@ class DoublyLinkedList {
             const removedData = this.head.data;
             this.head = null;
             this.tail = null;
+            this.size--;
             return removedData;
         }
 
@@ -128,6 +132,7 @@ class DoublyLinkedList {
                 const midNode = forwardRunner;
                 midNode.prev.next = midNode.next;
                 midNode.next.prev = midNode.prev;
+                this.size--;
                 return midNode.data;
             }
             // runners passed each other without stopping on the same node, even length, we can exit early
@@ -186,7 +191,7 @@ class DoublyLinkedList {
      * @param {any} newVal Data for the new node.
      * @returns {boolean} Indicates if the new node was added.
     */
-    insertAfter(targetVal, newVal) { 
+    insertAfter(targetVal, newVal) {
         if (this.isEmpty()) {
             return false;
         }
@@ -214,6 +219,7 @@ class DoublyLinkedList {
         }
 
         runner.next = newNode;
+        this.size++;
         return true;
     }
 
@@ -226,7 +232,7 @@ class DoublyLinkedList {
      * @param {any} newVal Data for the new node.
      * @returns {boolean} Indicates if the new node was added.
     */
-    insertBefore(targetVal, newVal) { 
+    insertBefore(targetVal, newVal) {
         if (this.isEmpty()) {
             return false;
         }
@@ -249,6 +255,7 @@ class DoublyLinkedList {
                 }
 
                 runner.prev = newNode;
+                this.size++;
                 return true;
             }
 
@@ -256,11 +263,37 @@ class DoublyLinkedList {
         }
         return false;
     }
+
+
+    /**
+    * Rotates a DoublyLinkedList clockwise a specified number of places
+    * by moving nodes from the tail to the head
+    * - Time: O(?).
+    * - Space: O(?).
+    * @param {int} places The number of places to rotate the list.
+    * @returns {DoublyLinkedList} This list.
+    */
+    // BONUS: allow negative places to rotate counter-clockwise
+    rotate(places) {
+        //Your code here
+    }
 }
 
-const singleNodeList = new DoublyLinkedList().insertAtBack(1);
-const biNodeList = new DoublyLinkedList().insertAtBack(1).insertAtBack(2);
-const firstThreeList = new DoublyLinkedList().insertAtBackMany([1, 2, 3]);
-const secondThreeList = new DoublyLinkedList().insertAtBackMany([4, 5, 6]);
-const unorderedList = new DoublyLinkedList().insertAtBackMany([-5,-10,4,-3,6,1,-7,-2,]);
+
+const testList = new DoublyLinkedList().insertAtBackMany([-5, -10, 4, -3, 6, 1, -7, -2]);
+const testList2 = new DoublyLinkedList().insertAtBackMany([-5, -10, 4, -3, 6, 1, -7, -2]);
+const testList3 = new DoublyLinkedList().insertAtBackMany([-5, -10, 4, -3, 6, 1, -7, -2]);
+
+
+testList.rotate(3);
+console.log("Test 1 \n",testList.toArray()) // expected: [1, -7, -2, -5, -10, 4, -3, 6 ]
+
+testList2.rotate(8);
+console.log("Test 2 \n",testList2.toArray()) // expected: [-5, -10, 4, -3, 6, 1, -7, -2]
+
+testList3.rotate(-2);
+console.log("Test 3 \n",testList3.toArray()) // expected [4, -3, 6, 1, -7, -2, -5, -10]
+
+
+
 
