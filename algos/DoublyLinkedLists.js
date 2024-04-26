@@ -275,7 +275,31 @@ class DoublyLinkedList {
     */
     // BONUS: allow negative places to rotate counter-clockwise
     rotate(places) {
-        //Your code here
+
+        // no need to rotate more times than there are nodes
+        places = places % this.size;
+        // for the bonus
+        if (places < 0) {
+            places = this.size + places;
+        }
+        // no rotation!
+        if (places === 0) return this;
+
+        // iterate backwards to find our rotation point
+        let runner = this.tail;
+        while (places && runner.prev) {
+            runner = runner.prev;
+            places--;
+        }
+        // move pointers
+        const prevHead = this.head;
+        this.tail.next = prevHead;
+        prevHead.prev = this.tail;
+        this.head = runner.next;
+        this.head.prev = null;
+        this.tail = runner;
+        this.tail.next = null;
+        return this;
     }
 }
 
@@ -286,14 +310,14 @@ const testList3 = new DoublyLinkedList().insertAtBackMany([-5, -10, 4, -3, 6, 1,
 
 
 testList.rotate(3);
-console.log("Test 1 \n",testList.toArray()) // expected: [1, -7, -2, -5, -10, 4, -3, 6 ]
+console.log("Test 1 \n", testList.toArray()); // expected: [1, -7, -2, -5, -10, 4, -3, 6 ]
 
 testList2.rotate(8);
-console.log("Test 2 \n",testList2.toArray()) // expected: [-5, -10, 4, -3, 6, 1, -7, -2]
+console.log("Test 2 \n", testList2.toArray()); // expected: [-5, -10, 4, -3, 6, 1, -7, -2]
 
 //Bonus case
-testList3.rotate(-2);
-console.log("Test 3 (Bonus)\n",testList3.toArray()) // expected [4, -3, 6, 1, -7, -2, -5, -10]
+testList3.rotate(-7);
+console.log("Test 3 (Bonus)\n", testList3.toArray()); // expected [4, -3, 6, 1, -7, -2, -5, -10]
 
 
 
