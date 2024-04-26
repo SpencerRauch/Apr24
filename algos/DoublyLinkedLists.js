@@ -291,8 +291,9 @@ console.log("Test 1 \n",testList.toArray()) // expected: [1, -7, -2, -5, -10, 4,
 testList2.rotate(8);
 console.log("Test 2 \n",testList2.toArray()) // expected: [-5, -10, 4, -3, 6, 1, -7, -2]
 
+//Bonus case
 testList3.rotate(-2);
-console.log("Test 3 \n",testList3.toArray()) // expected [4, -3, 6, 1, -7, -2, -5, -10]
+console.log("Test 3 (Bonus)\n",testList3.toArray()) // expected [4, -3, 6, 1, -7, -2, -5, -10]
 
 
 
